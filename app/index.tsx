@@ -12,13 +12,13 @@ export default function Home() {
     <>
       <Stack.Screen
         options={{
-          title: 'Journal',
+          title: 'Journey',
           headerShown: false,
         }}
       />
       <Container>
         <View className={styles.header}>
-          <Text className={styles.title}>Journal</Text>
+          <Text className={styles.title}>Journey</Text>
           <Text className={styles.date}>
             {time.toLocaleDateString('en-US', {
               day: '2-digit',

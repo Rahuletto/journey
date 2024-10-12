@@ -1,6 +1,6 @@
 {
   "cesVersion": "2.11.24",
-  "projectName": "journal",
+  "projectName": "journey",
   "packages": [
     {
       "name": "expo-router",

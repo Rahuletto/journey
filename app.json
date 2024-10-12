@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "journal",
-    "slug": "journal",
+    "name": "journey",
+    "slug": "journey",
     "version": "1.0.0",
     "jsEngine": "hermes",
-    "scheme": "journal",
+    "scheme": "journey",
     "userInterfaceStyle": "automatic",
     "web": {
       "bundler": "metro",
