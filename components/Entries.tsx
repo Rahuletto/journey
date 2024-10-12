@@ -48,7 +48,7 @@ const AnimatedEntry: React.FC<AnimatedEntryProps> = ({
       {
         scale:
           deleteAnimation?.uid === entry.uid && deleteAnimation.animated
-            ? withTiming(0.9, { duration: 300 })
+            ? withTiming(1, { duration: 300 })
             : 1,
       },
     ],
@@ -176,11 +176,11 @@ export const EntryList: React.FC<EntryListProps> = ({ otherEntries, time, isExpa
   const handleDelete = useCallback(
     async (entry: Entry) => {
       setDeleteAnimation({ uid: entry.uid, animated: true });
+      resetPopup();
       setTimeout(async () => {
         const newEntries = savedEntries.filter((e) => e.uid !== entry.uid);
         await updateEntries(newEntries);
         setDeleteAnimation(null);
-        resetPopup();
       }, 300);
     },
     [savedEntries, updateEntries]
@@ -233,7 +233,7 @@ export const EntryList: React.FC<EntryListProps> = ({ otherEntries, time, isExpa
               onPress={resetPopup}
               className="z-49 absolute left-0 top-0 h-screen w-screen"
             />
-            {!deleteAnimation && selectedEntry && (
+            {selectedEntry && (
               <Animated.View
                 className="z-60 relative -ml-1 -mt-5 w-[92%] rounded-2xl bg-[#f3f3f3] p-4 pl-8 dark:bg-[#202020]"
                 style={popupStyle}>
