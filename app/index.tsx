@@ -1,19 +1,41 @@
-import { Stack, Link } from 'expo-router';
+import { Stack } from 'expo-router';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
 
-import { Button } from '~/components/Button';
 import { Container } from '~/components/Container';
-import { ScreenContent } from '~/components/ScreenContent';
+import JournalEntry from '~/components/TextInput';
 
 export default function Home() {
+  const [time, setTime] = useState(new Date());
+
   return (
     <>
-      <Stack.Screen options={{ title: 'Home' }} />
+      <Stack.Screen
+        options={{
+          title: 'Journal',
+          headerShown: false,
+        }}
+      />
       <Container>
-        <ScreenContent path="app/index.tsx" title="Home" />
-        <Link href={{ pathname: '/details', params: { name: 'Dan' } }} asChild>
-          <Button title="Show Details" />
-        </Link>
+        <View className={styles.header}>
+          <Text className={styles.title}>Journal</Text>
+          <Text className={styles.date}>
+            {time.toLocaleDateString('en-US', {
+              day: '2-digit',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </Text>
+        </View>
+
+        <JournalEntry time={time} setTime={setTime} />
       </Container>
     </>
   );
 }
+
+const styles = {
+  header: `flex flex-col gap-1 mb-3`,
+  title: `text-4xl font-semibold text-black dark:text-white`,
+  date: `text-md font-regular text-gray-500 dark:text-white dark:opacity-40`,
+};
