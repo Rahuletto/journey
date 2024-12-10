@@ -10,9 +10,12 @@ Here's why Journey is your new best friend:
 So, what are you waiting for? Start documenting your awesomeness today!
 
 ## Screenshots
-![Journey Screenshot 1](image-4.png)
-![Journey Screenshot 2](image-1.png)
-![Journey Screenshot 3](image-2.png)
+
+![Journey Screenshot 1](images/image-4.png)
+
+![Journey Screenshot 2](images/image-1.png)
+
+![Journey Screenshot 3](images/image-2.png)
 
 > ![INFO]
 > Made using React Native, Expo and Nativewind
