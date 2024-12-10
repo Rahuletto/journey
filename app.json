@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "journey",
-    "slug": "journey",
-    "version": "1.0.0",
+    "name": "Journey",
+    "slug": "Journey",
+    "version": "1.2.0",
     "jsEngine": "hermes",
     "scheme": "journey",
     "userInterfaceStyle": "automatic",
@@ -45,14 +45,16 @@
       "jsEngine": "hermes",
       "infoPlist": {
         "UIViewControllerBasedStatusBarAppearance": true
-      }
+      },
+      "bundleIdentifier": "com.marban.journey"
     },
     "android": {
       "jsEngine": "hermes",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.marban.journey"
     }
   }
 }
